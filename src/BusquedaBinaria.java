@@ -7,7 +7,7 @@ public class BusquedaBinaria {
             int medio=(inicio + fin)/2;
             if(nombre.compareTo(products[medio].getNombre())==0){
                 return medio;
-            }else if(nombre.compareTo(products[medio].getNombre())<0){
+            }else if(nombre.compareTo(products[medio].getNombre())>0){
                 inicio = medio+1;
             }else{
                 fin = medio-1;
@@ -22,7 +22,7 @@ public class BusquedaBinaria {
         for(int i = 1;i<products.length;i++){
             Product key = products[i];
             int j = i-1;
-            while(j>=0 && (products[j].getNombre().compareTo(key.getNombre())<0)){
+            while(j>=0 && (products[j].getNombre().compareTo(key.getNombre())>0)){
                 products[j+1] = products[j]; 
                 j--;
             }
